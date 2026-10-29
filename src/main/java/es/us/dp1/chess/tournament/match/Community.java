@@ -6,6 +6,7 @@ import es.us.dp1.chess.tournament.model.NamedEntity;
 import es.us.dp1.chess.tournament.user.User;
 import jakarta.persistence.Entity;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Transient;
 import lombok.Getter;
 import lombok.Setter;
@@ -21,7 +22,7 @@ public class Community extends NamedEntity {
     @ManyToMany
     List<User> members;
 
-    @Transient
+    @OneToMany
     List<Season> seasons;
     
 }

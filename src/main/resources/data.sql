@@ -195,3 +195,35 @@ VALUES (6, 'Partida 6', CURRENT_TIMESTAMP(), NULL, 300, 106, 5, 6);
 -- Community
 INSERT INTO community (id, name, location, max_players)
 VALUES (1, 'Ajedrez Sevilla', 'Sevilla', 500);
+
+INSERT INTO rating (draws, elo, id, losses, player_id, wins)
+VALUES (1, 1560, 1, 2, 4, 4),
+       (0, 1250, 2, 2, 5, 2),
+       (4, 1000, 3, 0, 6, 0),
+       (2, 2080, 4, 1, 4, 8),
+       (1, 1310, 5, 6, 5, 4),
+       (0, 1567, 6, 0, 6, 2);
+
+INSERT INTO season (end_date, id, start_date, name)
+VALUES ('2025-05-31', 1, '2024-09-01', 'Juegos Municipales 2024-25'),
+       ('2026-06-15', 2, '2025-10-15', 'Temporada Oficial 2025-26');
+
+INSERT INTO community_seasons (community_id, seasons_id)
+VALUES (1, 1),
+       (1, 2);
+
+INSERT INTO season_ratings (ratings_id, season_id)
+VALUES (1, 1),
+       (2, 1),
+       (3, 1),
+       (4, 2),
+       (5, 2),
+       (6, 2);
+
+INSERT INTO season_matches (matches_id, season_id)
+VALUES (1, 1),
+       (2, 1),
+       (3, 1),
+       (4, 2),
+       (5, 2),
+       (6, 2);
